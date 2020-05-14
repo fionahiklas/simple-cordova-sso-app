@@ -1,0 +1,14 @@
+{
+  "name": "cordova_test_app",
+  "description": "Basic Cordova App to test SSO",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "12.16.x"
+  },
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {
+    "cordova": "^9.0.0"
+  }
+}
