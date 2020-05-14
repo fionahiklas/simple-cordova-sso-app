@@ -28,6 +28,14 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+        console.log("Setting button handler");
+        button = document.getElementById("clickMe");
+      
+        button.onclick = function () {
+            console.log("I got clicked!");
+            alert("You clicked me!");
+        }
+        console.log("Set up the button");
     },
 
     // Update DOM on a Received Event

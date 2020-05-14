@@ -22,6 +22,8 @@
 }
 ```
 
+## Setting up Cordova
+
 * Add Cordova packages
 
 ```
@@ -41,6 +43,63 @@ cd TestSSOApp
 npx cordova platform add windows
 ```
 
+* Changing the config.xml to add this line
+
+```
+    <preference name="windows-target-version" value="10.0" />
+```
+
+* Building for windows
+
+```
+npx cordova build windows
+```
+
+* This generates output like this (Since Visual Studio 2017 was already installed)
+
+```
+Building project: C:\Users\fiona\wd\nps\cordova_test_app\TestSSOApp\platforms\windows\CordovaApp.Windows10.jsproj
+        Configuration : debug
+        Platform      : anycpu
+        Buildflags    : /p:AppxBundle=Never
+        MSBuildTools  : C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin
+buildProject spawn: C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\msbuild [
+  'C:\\Users\\fiona\\wd\\nps\\cordova_test_app\\TestSSOApp\\platforms\\windows\\CordovaApp.Windows10.jsproj',
+  '/clp:NoSummary;NoItemAndPropertyList;Verbosity=minimal',
+  '/nologo',
+  '/p:Configuration=debug',
+  '/p:Platform=anycpu',
+  '/p:AppxBundle=Never'
+] { stdio: 'inherit' }
+  prebuild.js: Patching platform `10`
+  - Injected `base.js` reference to `/www/index.html`
+  - Removing /( *)(<script\s+(?:type="text\/javascript"\s+)?src="\/\/Microsoft.WinJS.2.0\/js\/base.js">\s*<\/script>)(\
+  s*)/ from /www/index.html
+  - Removing /( *)(<script\s+(?:type="text\/javascript"\s+)?src="\/\/Microsoft.Phone.WinJS.2.1\/js\/base.js">\s*<\/scri
+  pt>)(\s*)/ from /www/index.html
+  CordovaApp.Windows10 -> C:\Users\fiona\wd\nps\cordova_test_app\TestSSOApp\platforms\windows\AppPackages\CordovaApp.Wi
+  ndows10_1.0.0.0_anycpu_debug_Test\CordovaApp.Windows10_1.0.0.0_anycpu_debug.appx
+```
+
+* Attempting to build the windows app
+
+```
+npx cordova build windows
+```
+
+* This seemed to work but didn't do much, trying to run
+
+```
+npx cordova run windows
+```
+
+* To install the application it needs to turn on developer mode and add a license
+* Developer accounts incur a one-off [setup fee](https://docs.microsoft.com/en-gb/windows/uwp/publish/account-types-locations-and-fees)
+* Trying to run in Visual Studio 2015 instead
+* Actually seems to need full "developer mode" switching on
+* Also doing this installs "Windows Developer Mode" optional packages
+* After restarting the process of running the app locally it does indeed work
+* The Cordova App Windows appears showing the contents of the index.html file
 
 
 ## References
