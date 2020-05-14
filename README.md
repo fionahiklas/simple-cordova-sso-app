@@ -46,3 +46,4 @@ npx cordova platform add windows
 ## References
 
 * [Why you shouldn't globally install npm packages](https://medium.com/@rajeshnaroth/never-do-npm-global-install-1201c44334bf)
+* [Cordova Windows Build](https://cordova.apache.org/docs/en/latest/guide/platforms/windows/index.html#requirements-and-support)
