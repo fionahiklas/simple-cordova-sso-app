@@ -34,7 +34,12 @@ npm install cordova --save-dev
 npx cordova create TestSSOApp com.example.test.sso TestSSO
 ```
 
+* Installing the Windows platform
 
+```
+cd TestSSOApp
+npx cordova platform add windows
+```
 
 
 
