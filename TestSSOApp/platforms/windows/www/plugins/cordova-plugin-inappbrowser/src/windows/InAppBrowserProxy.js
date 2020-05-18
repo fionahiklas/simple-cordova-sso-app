@@ -142,6 +142,7 @@ var IAB = {
                 window.location = strUrl;
             } else {
                 // "_blank" or anything else
+                console.log("Got here with _blank target")
                 if (!browserWrap) {
                     var browserWrapStyle = document.createElement('link');
                     browserWrapStyle.rel = 'stylesheet';
@@ -274,10 +275,12 @@ var IAB = {
 
                 // start listening for navigation events
                 attachNavigationEvents(popup, navigationEventsCallback);
-
+                console.log("Got here before isWebViewAvailableTest ...");
                 if (isWebViewAvailable) {
                     strUrl = strUrl.replace('ms-appx://', 'ms-appx-web://');
+                    console.log("Webview is available")
                 }
+                console.log("About to set the URL for the popup to: " + strUrl);
                 popup.src = strUrl;
             }
         });

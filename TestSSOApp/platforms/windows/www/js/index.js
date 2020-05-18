@@ -67,14 +67,14 @@ var app = {
 
       document.getElementById('pageInApp').onclick = function () {
           console.log("Page InApp Button got clicked");
-          var inAppBrowserRef = window.open('http://192.168.209.210:9292/page', '_blank', 'location=yes');
+          var inAppBrowserRef = window.open('http://192.168.123.101:9292/page', '_blank', 'location=yes');
           inAppBrowserRef.addEventListener('loaderror', function (event) { console.log('loaderror event, URL: ' + event.url + ' message: ' + event.message); });
 
       }
 
       document.getElementById('somestuffInApp').onclick = function () {
           console.log("Somestuff InApp Button got clicked");
-          var inAppBrowserRef = window.open('http://192.168.209.210:9292/page', '_blank', 'location=yes');
+          var inAppBrowserRef = window.open('http://192.168.123.101:9292/somestuff', '_blank', 'location=yes');
           inAppBrowserRef.addEventListener('loaderror', function (event) { console.log('loaderror event, URL: ' + event.url + ' message: ' + event.message); });
 
       }

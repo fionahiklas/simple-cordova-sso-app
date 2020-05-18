@@ -1,6 +1,11 @@
 ## Overview
 
-## Setup Node
+Experimenting with Single Sign on with Cordova and Windows 10 Universal Windows
+Platform (UWP) apps.
+
+## Setup
+
+### Installing Node
 
 * Installing [Node.js](https://nodejs.org/en/)
 * May also need to follow [instructions for compiling native components](https://github.com/nodejs/node-gyp#on-windows)
@@ -22,7 +27,8 @@
 }
 ```
 
-## Setting up Cordova
+
+### Setting up Cordova
 
 * Add Cordova packages
 
@@ -101,7 +107,7 @@ npx cordova run windows
 * After restarting the process of running the app locally it does indeed work
 * The Cordova App Windows appears showing the contents of the index.html file
 
-## Adding In-app Browser
+### Adding In-app Browser
 
 * Following the [instructions on the github page](https://github.com/apache/cordova-plugin-inappbrowser)
 
@@ -111,9 +117,27 @@ npx cordova run windows
 npx cordova plugin add cordova-plugin-inappbrowser
 ```
 
+
+
 ## References
 
+### Node/NPM
+
 * [Why you shouldn't globally install npm packages](https://medium.com/@rajeshnaroth/never-do-npm-global-install-1201c44334bf)
+
+### Cordova
+
 * [Cordova Windows Build](https://cordova.apache.org/docs/en/latest/guide/platforms/windows/index.html#requirements-and-support)
 * [In-app browser](https://cordova.apache.org/docs/en/2.4.0/cordova/inappbrowser/inappbrowser.html)
 * [In-app browser github](https://github.com/apache/cordova-plugin-inappbrowser)
+* [Cordova whitelist and CSP](https://docs.microsoft.com/en-us/visualstudio/cross-platform/tools-for-cordova/security/whitelists?view=toolsforcordova-2017)
+
+
+### Windows
+
+* [Xamarin WebView](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/webview?tabs=windows)
+
+### HTML
+
+* The [HTML link target tag](https://www.w3schools.com/tags/att_a_target.asp)
+* [W3C Content Security Policy 2](https://www.w3.org/TR/CSP2/)
