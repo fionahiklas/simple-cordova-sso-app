@@ -7,3 +7,10 @@
 # Node
 node_modules
 
+# Build
+build
+
+
+# Visual studio
+.vs
+

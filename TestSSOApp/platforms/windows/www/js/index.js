@@ -26,8 +26,60 @@ var app = {
     //
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
-    onDeviceReady: function() {
-        this.receivedEvent('deviceready');
+  onDeviceReady: function() {
+      this.receivedEvent('deviceready');
+      console.log("Setting button handler");
+      clickMe = document.getElementById("clickMe");
+
+      clickMe.onclick = function () {
+	    console.log("I got clicked!");
+        var inAppBrowserRef = window.open('http://www.ginginwww.com:9292/page', '_blank', 'location=yes');
+	    inAppBrowserRef.addEventListener('loadstart', function (event) { console.log('loadstart event, URL: ' + event.url); });
+	  
+	    inAppBrowserRef.addEventListener('loadstop', function (event) { console.log('loadstop event, URL: ' + event.url); });
+	  
+	    inAppBrowserRef.addEventListener('loaderror', function (event) { console.log('loaderror event, URL: ' + event.url + ' message: ' + event.message); });
+	  
+	    inAppBrowserRef.addEventListener('beforeload', function (event) { console.log('beforeload event, URL: ' + event.url); });
+	  
+	    inAppBrowserRef.addEventListener('message', function (event) { console.log('message event, message: ' + event.message); });
+      }
+
+      document.getElementById('bbc').onclick = function () {
+          console.log("BBC Button got clicked");
+          window.Location = "http://www.bbc.co.uk"
+      }
+
+      document.getElementById('page').onclick = function () {
+          console.log("Page Button got clicked");
+          window.Location = "http://192.168.209.210:9292/page"
+      }
+
+      document.getElementById('somestuff').onclick = function () {
+          console.log("Somestuff Button got clicked");
+          window.Location = "http://192.168.209.210:9292/sometsuff"
+      }
+
+      document.getElementById('bbcInApp').onclick = function () {
+          console.log("BBC InApp Button got clicked");
+          var inAppBrowserRef = window.open('http://www.bbc.co.uk', '_blank', 'location=yes');
+      }
+
+      document.getElementById('pageInApp').onclick = function () {
+          console.log("Page InApp Button got clicked");
+          var inAppBrowserRef = window.open('http://192.168.209.210:9292/page', '_blank', 'location=yes');
+          inAppBrowserRef.addEventListener('loaderror', function (event) { console.log('loaderror event, URL: ' + event.url + ' message: ' + event.message); });
+
+      }
+
+      document.getElementById('somestuffInApp').onclick = function () {
+          console.log("Somestuff InApp Button got clicked");
+          var inAppBrowserRef = window.open('http://192.168.209.210:9292/page', '_blank', 'location=yes');
+          inAppBrowserRef.addEventListener('loaderror', function (event) { console.log('loaderror event, URL: ' + event.url + ' message: ' + event.message); });
+
+      }
+
+      console.log("Set up the buttons");
     },
 
     // Update DOM on a Received Event

@@ -101,8 +101,19 @@ npx cordova run windows
 * After restarting the process of running the app locally it does indeed work
 * The Cordova App Windows appears showing the contents of the index.html file
 
+## Adding In-app Browser
+
+* Following the [instructions on the github page](https://github.com/apache/cordova-plugin-inappbrowser)
+
+* Running command to add the plugin
+
+```
+npx cordova plugin add cordova-plugin-inappbrowser
+```
 
 ## References
 
 * [Why you shouldn't globally install npm packages](https://medium.com/@rajeshnaroth/never-do-npm-global-install-1201c44334bf)
 * [Cordova Windows Build](https://cordova.apache.org/docs/en/latest/guide/platforms/windows/index.html#requirements-and-support)
+* [In-app browser](https://cordova.apache.org/docs/en/2.4.0/cordova/inappbrowser/inappbrowser.html)
+* [In-app browser github](https://github.com/apache/cordova-plugin-inappbrowser)
